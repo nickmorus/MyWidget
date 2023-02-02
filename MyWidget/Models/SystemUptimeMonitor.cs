@@ -10,6 +10,7 @@ namespace MyWidget.Models
     public class SystemUptimeMonitor
     {
         public event Action<TimeSpan>? UptimeChanged;
+        private const int updateDelay = 1;
         public void Start()
         {
             Task.Run(async () =>
@@ -17,8 +18,9 @@ namespace MyWidget.Models
                 TimeSpan uptime = GetUpTime();
                 while (true)
                 {
-                    await Task.Delay(1000);
-                    uptime = uptime.Add(TimeSpan.FromSeconds(1));
+                    TimeSpan span = TimeSpan.FromSeconds(updateDelay);
+                    await Task.Delay(span);
+                    uptime = uptime.Add(span);
                     UptimeChanged?.Invoke(uptime);
                 }
             });

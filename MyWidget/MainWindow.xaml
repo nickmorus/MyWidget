@@ -6,7 +6,7 @@
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:MyWidget"
         mc:Ignorable="d"
-        Title="MyWidget" Height="450" Width="570" TitleCharacterCasing="Normal">
+        Title="MyWidget" Height="70" Width="295" TitleCharacterCasing="Normal">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
